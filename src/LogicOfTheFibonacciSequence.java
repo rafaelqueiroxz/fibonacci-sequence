@@ -17,22 +17,26 @@ public class LogicOfTheFibonacciSequence {
         int current = 1;
         int next = 0;
         int x = 0;
+        int aux = 0;
 
         System.out.print("Enter how many numbers you want to see of Fibonacci sequence: ");
         x = sc.nextInt();
 
-        System.out.print(previous + ", ");
-        System.out.print(current + ", ");
-        while ((x-3) > 0) {
-
-            next = current + previous;
-            System.out.print(next + ", ");
-            previous = current;
-            current = next;
-            x--;
-
+        System.out.print(previous);
+        aux = x;
+        while ((x-1) > 0) {
+            if (aux == x) {
+                System.out.print(", " + current);
+                x--;
+            } else {
+                next = current + previous;
+                System.out.print(", " + next);
+                previous = current;
+                current = next;
+                x--;
+            }
         }
-        System.out.print((current + previous) + "\n");
+        System.out.println();
 
         sc.close();
     }
